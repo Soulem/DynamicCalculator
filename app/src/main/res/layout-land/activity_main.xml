@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/currEquation"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text=""
+        android:padding="8dp"
+        android:gravity="end"
+        android:textSize="22sp"
+        android:layout_marginTop="16dp"
+        android:textAlignment="textEnd"
+        android:background="@android:color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/currAnswer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:padding="8dp"
+        android:text="0.0"
+        android:gravity="bottom|end"
+        android:textAlignment="textEnd"
+        android:textSize="52sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/currEquation"
+        app:layout_constraintVertical_weight="1.25"
+        app:layout_constraintBottom_toTopOf="@+id/number_frameLayout"
+        />
+
+    <FrameLayout
+        android:id="@+id/number_frameLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/currAnswer"
+        app:layout_constraintEnd_toStartOf="@id/operation_frameLayout"
+        app:layout_constraintVertical_weight="2.5"
+        app:layout_constraintHorizontal_weight="1.25"
+
+        />
+
+    <FrameLayout
+        android:id="@+id/scientific_operation_frameLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/operation_frameLayout"
+        app:layout_constraintTop_toBottomOf="@+id/currAnswer"
+        app:layout_constraintVertical_weight="2.5"
+        app:layout_constraintHorizontal_weight="1.25"
+        />
+
+    <FrameLayout
+        android:id="@+id/operation_frameLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/grey"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/scientific_operation_frameLayout"
+        app:layout_constraintStart_toEndOf="@+id/number_frameLayout"
+        app:layout_constraintTop_toBottomOf="@+id/currAnswer"
+        app:layout_constraintVertical_weight="2.5"
+        app:layout_constraintHorizontal_weight=".5"
+        />
+
+    <!--First row of numbers-->
+    <TextView
+        style="@style/CalculatorHorizontalNumberButton"
+        android:id="@+id/seven_button"
+        app:layout_constraintVertical_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="7"
+        app:layout_constraintBottom_toTopOf="@+id/four_button"
+        app:layout_constraintEnd_toStartOf="@+id/eight_button"
+        app:layout_constraintStart_toStartOf="@+id/number_frameLayout"
+        app:layout_constraintTop_toTopOf="@+id/number_frameLayout" />
+
+    <TextView
+        style="@style/CalculatorHorizontalNumberButton"
+        android:id="@+id/eight_button"
+        android:layout_width="0dp"
+        app:layout_constraintVertical_weight="1"
+        android:layout_height="0dp"
+        android:text="8"
+        app:layout_constraintBottom_toTopOf="@+id/five_button"
+        app:layout_constraintEnd_toStartOf="@+id/nine_button"
+        app:layout_constraintStart_toEndOf="@+id/seven_button"
+        app:layout_constraintTop_toTopOf="@+id/number_frameLayout" />
+
+    <TextView
+        style="@style/CalculatorHorizontalNumberButton"
+        android:id="@+id/nine_button"
+        app:layout_constraintVertical_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="9"
+        app:layout_constraintEnd_toEndOf="@+id/number_frameLayout"
+        app:layout_constraintBottom_toTopOf="@+id/six_button"
+        app:layout_constraintStart_toEndOf="@+id/eight_button"
+        app:layout_constraintTop_toTopOf="@+id/number_frameLayout" />
+
+    <!-- Second row of numbers -->
+    <TextView
+        style="@style/CalculatorHorizontalNumberButton"
+        android:id="@+id/four_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintVertical_weight="1"
+        android:text="4"
+        app:layout_constraintBottom_toTopOf="@+id/one_button"
+        app:layout_constraintEnd_toStartOf="@+id/five_button"
+        app:layout_constraintStart_toStartOf="@+id/number_frameLayout"
+        app:layout_constraintTop_toBottomOf="@+id/seven_button" />
+
+    <TextView
+        style="@style/CalculatorHorizontalNumberButton"
+        android:id="@+id/five_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="5"
+        app:layout_constraintVertical_weight="1"
+        app:layout_constraintBottom_toTopOf="@+id/two_button"
+        app:layout_constraintEnd_toStartOf="@+id/six_button"
+        app:layout_constraintStart_toEndOf="@+id/four_button"
+        app:layout_constraintTop_toBottomOf="@+id/eight_button" />
+
+    <TextView
+        style="@style/CalculatorHorizontalNumberButton"
+        android:id="@+id/six_button"
+        app:layout_constraintVertical_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="6"
+        app:layout_constraintEnd_toEndOf="@+id/number_frameLayout"
+        app:layout_constraintBottom_toTopOf="@+id/three_button"
+        app:layout_constraintStart_toEndOf="@+id/five_button"
+        app:layout_constraintTop_toBottomOf="@+id/nine_button" />
+
+    <!-- Third row of numbers -->
+    <TextView
+        style="@style/CalculatorHorizontalNumberButton"
+        android:id="@+id/one_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintVertical_weight="1"
+        android:text="1"
+        app:layout_constraintBottom_toTopOf="@+id/zero_button"
+        app:layout_constraintEnd_toStartOf="@+id/two_button"
+        app:layout_constraintStart_toStartOf="@+id/number_frameLayout"
+        app:layout_constraintTop_toBottomOf="@+id/four_button" />
+
+    <TextView
+        style="@style/CalculatorHorizontalNumberButton"
+        android:id="@+id/two_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintVertical_weight="1"
+        android:text="2"
+        app:layout_constraintBottom_toTopOf="@+id/period_button"
+        app:layout_constraintEnd_toStartOf="@+id/three_button"
+        app:layout_constraintStart_toEndOf="@+id/one_button"
+        app:layout_constraintTop_toBottomOf="@+id/five_button" />
+
+    <TextView
+        style="@style/CalculatorHorizontalNumberButton"
+        android:id="@+id/three_button"
+        android:layout_width="0dp"
+        app:layout_constraintVertical_weight="1"
+        android:layout_height="0dp"
+        android:text="3"
+        app:layout_constraintEnd_toEndOf="@+id/number_frameLayout"
+        app:layout_constraintBottom_toTopOf="@+id/zero_button"
+        app:layout_constraintStart_toEndOf="@+id/two_button"
+        app:layout_constraintTop_toBottomOf="@+id/six_button" />
+
+    <!-- Forth row of numbers -->
+    <TextView
+        style="@style/CalculatorHorizontalNumberButton"
+        android:id="@+id/zero_button"
+        android:layout_width="0dp"
+        app:layout_constraintVertical_weight="1"
+        android:layout_height="0dp"
+        android:text="0"
+        app:layout_constraintBottom_toBottomOf="@+id/number_frameLayout"
+        app:layout_constraintEnd_toStartOf="@+id/period_button"
+        app:layout_constraintStart_toStartOf="@+id/number_frameLayout"
+        app:layout_constraintTop_toBottomOf="@+id/one_button" />
+
+    <TextView
+        style="@style/CalculatorHorizontalNumberButton"
+        android:id="@+id/period_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintVertical_weight="1"
+        android:text="."
+        app:layout_constraintBottom_toBottomOf="@+id/number_frameLayout"
+        app:layout_constraintEnd_toStartOf="@+id/negate_button"
+        app:layout_constraintStart_toEndOf="@+id/zero_button"
+        app:layout_constraintTop_toBottomOf="@+id/two_button" />
+
+    <TextView
+        style="@style/CalculatorHorizontalNumberButton"
+        android:id="@+id/negate_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="±"
+        app:layout_constraintBottom_toBottomOf="@+id/number_frameLayout"
+        app:layout_constraintEnd_toEndOf="@+id/number_frameLayout"
+        app:layout_constraintStart_toEndOf="@+id/period_button"
+        app:layout_constraintVertical_weight="1"
+        app:layout_constraintTop_toBottomOf="@+id/three_button" />
+
+    <!-- Operation Buttons -->
+    <TextView
+        style="@style/CalculatorHorizontalOperationButton"
+        android:id="@+id/divide_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="÷"
+        app:layout_constraintVertical_weight="1"
+        app:layout_constraintEnd_toStartOf="@+id/equals_button"
+        app:layout_constraintStart_toStartOf="@+id/operation_frameLayout"
+        app:layout_constraintTop_toTopOf="@+id/operation_frameLayout"
+        app:layout_constraintBottom_toTopOf="@+id/multiply_button"/>
+
+    <TextView
+        style="@style/CalculatorHorizontalOperationButton"
+        android:id="@+id/ac_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="C"
+        app:layout_constraintVertical_weight="1"
+        app:layout_constraintEnd_toEndOf="@+id/operation_frameLayout"
+        app:layout_constraintStart_toEndOf="@+id/divide_button"
+        app:layout_constraintTop_toTopOf="@+id/operation_frameLayout"
+        app:layout_constraintBottom_toTopOf="@id/multiply_button"
+        />
+
+    <TextView
+        style="@style/CalculatorHorizontalOperationButton"
+        android:id="@+id/multiply_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="*"
+        app:layout_constraintVertical_weight="1"
+        app:layout_constraintEnd_toStartOf="@+id/ac_button"
+        app:layout_constraintStart_toStartOf="@+id/operation_frameLayout"
+        app:layout_constraintBottom_toTopOf="@+id/minus_button"
+        app:layout_constraintTop_toBottomOf="@+id/divide_button" />
+
+    <TextView
+        style="@style/CalculatorHorizontalOperationButton"
+        android:id="@+id/minus_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="-"
+        app:layout_constraintVertical_weight="1"
+        app:layout_constraintBottom_toTopOf="@+id/plus_button"
+        app:layout_constraintEnd_toStartOf="@+id/ac_button"
+        app:layout_constraintStart_toStartOf="@+id/operation_frameLayout"
+        app:layout_constraintTop_toBottomOf="@+id/multiply_button" />
+
+    <TextView
+        style="@style/CalculatorHorizontalOperationButton"
+        android:id="@+id/plus_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="+"
+        app:layout_constraintVertical_weight="1"
+        app:layout_constraintBottom_toBottomOf="@+id/operation_frameLayout"
+        app:layout_constraintEnd_toStartOf="@+id/equals_button"
+        app:layout_constraintStart_toStartOf="@+id/operation_frameLayout"
+        app:layout_constraintTop_toBottomOf="@+id/minus_button" />
+
+    <TextView
+        style="@style/CalculatorHorizontalOperationButton"
+        android:id="@+id/equals_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintVertical_weight="1"
+        android:text="="
+        app:layout_constraintBottom_toBottomOf="@+id/operation_frameLayout"
+        app:layout_constraintEnd_toEndOf="@+id/operation_frameLayout"
+        app:layout_constraintStart_toEndOf="@+id/plus_button"
+        app:layout_constraintTop_toBottomOf="@+id/minus_button" />
+
+    <!-- Scientific Operation Buttons -->
+    <TextView
+        style="@style/CalculatorScientificOperationButton"
+        android:id="@+id/switch_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="INV"
+        app:layout_constraintVertical_weight="1"
+        app:layout_constraintStart_toStartOf="@+id/scientific_operation_frameLayout"
+        app:layout_constraintTop_toTopOf="@+id/scientific_operation_frameLayout"
+        app:layout_constraintEnd_toStartOf="@+id/rad_deg_button"
+        app:layout_constraintBottom_toTopOf="@+id/sin_button"/>
+
+    <TextView
+        style="@style/CalculatorScientificOperationButton"
+        android:id="@+id/rad_deg_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="RAD"
+        app:layout_constraintVertical_weight="1"
+        app:layout_constraintStart_toEndOf="@+id/switch_button"
+        app:layout_constraintTop_toTopOf="@+id/scientific_operation_frameLayout"
+        app:layout_constraintBottom_toTopOf="@+id/sin_button"
+        app:layout_constraintEnd_toStartOf="@+id/mod_button"/>
+
+    <TextView
+        style="@style/CalculatorScientificOperationButton"
+        android:id="@+id/mod_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="%"
+        app:layout_constraintVertical_weight="1"
+        app:layout_constraintStart_toEndOf="@+id/rad_deg_button"
+        app:layout_constraintEnd_toEndOf="@+id/scientific_operation_frameLayout"
+        app:layout_constraintTop_toTopOf="@+id/scientific_operation_frameLayout"
+        app:layout_constraintBottom_toTopOf="@+id/sin_button"/>
+
+    <TextView
+        style="@style/CalculatorScientificOperationButton"
+        android:id="@+id/sin_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="sin"
+        app:layout_constraintVertical_weight="1"
+        app:layout_constraintStart_toStartOf="@+id/scientific_operation_frameLayout"
+        app:layout_constraintTop_toBottomOf="@+id/switch_button"
+        app:layout_constraintEnd_toStartOf="@+id/cos_button"
+        app:layout_constraintBottom_toTopOf="@+id/inv_button"
+        />
+
+    <TextView
+        style="@style/CalculatorScientificOperationButton"
+        android:id="@+id/cos_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="cos"
+        app:layout_constraintVertical_weight="1"
+        app:layout_constraintStart_toEndOf="@+id/sin_button"
+        app:layout_constraintTop_toBottomOf="@+id/rad_deg_button"
+        app:layout_constraintBottom_toTopOf="@+id/log_button"
+        app:layout_constraintEnd_toStartOf="@id/tan_button"/>
+
+    <TextView
+        style="@style/CalculatorScientificOperationButton"
+        android:id="@+id/tan_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="tan"
+        app:layout_constraintVertical_weight="1"
+        app:layout_constraintStart_toEndOf="@+id/cos_button"
+        app:layout_constraintTop_toBottomOf="@+id/mod_button"
+        app:layout_constraintBottom_toTopOf="@+id/inv_button"
+        app:layout_constraintEnd_toEndOf="@+id/scientific_operation_frameLayout"/>
+
+    <TextView
+        style="@style/CalculatorScientificOperationButton"
+        android:id="@+id/inv_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="in"
+        app:layout_constraintVertical_weight="1"
+        app:layout_constraintStart_toStartOf="@+id/scientific_operation_frameLayout"
+        app:layout_constraintTop_toBottomOf="@+id/sin_button"
+        app:layout_constraintEnd_toStartOf="@+id/log_button"
+        app:layout_constraintBottom_toTopOf="@id/pi_button"/>
+
+    <TextView
+        style="@style/CalculatorScientificOperationButton"
+        android:id="@+id/log_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="log"
+        app:layout_constraintVertical_weight="1"
+        app:layout_constraintStart_toEndOf="@+id/inv_button"
+        app:layout_constraintTop_toBottomOf="@+id/cos_button"
+        app:layout_constraintEnd_toStartOf="@id/squ_root_button"
+        app:layout_constraintBottom_toTopOf="@id/e_button"/>
+
+    <TextView
+        style="@style/CalculatorScientificOperationButton"
+        android:id="@+id/squ_root_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="²√x"
+        app:layout_constraintVertical_weight="1"
+        app:layout_constraintStart_toEndOf="@+id/log_button"
+        app:layout_constraintTop_toBottomOf="@+id/tan_button"
+        app:layout_constraintEnd_toEndOf="@+id/scientific_operation_frameLayout"
+        app:layout_constraintBottom_toTopOf="@id/squ_button"/>
+
+    <TextView
+        style="@style/CalculatorScientificOperationButton"
+        android:id="@+id/pi_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="ᴨ"
+        app:layout_constraintVertical_weight="1"
+        app:layout_constraintStart_toStartOf="@+id/scientific_operation_frameLayout"
+        app:layout_constraintTop_toBottomOf="@+id/inv_button"
+        app:layout_constraintEnd_toStartOf="@id/e_button"
+        app:layout_constraintBottom_toTopOf="@id/open_bracket_button"/>
+
+    <TextView
+        style="@style/CalculatorScientificOperationButton"
+        android:id="@+id/e_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="e"
+        app:layout_constraintVertical_weight="1"
+        app:layout_constraintStart_toEndOf="@+id/pi_button"
+        app:layout_constraintTop_toBottomOf="@+id/log_button"
+        app:layout_constraintEnd_toStartOf="@id/squ_button"
+        app:layout_constraintBottom_toTopOf="@id/close_bracket_button"/>
+
+    <TextView
+        style="@style/CalculatorScientificOperationButton"
+        android:id="@+id/squ_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="x²"
+        app:layout_constraintVertical_weight="1"
+        app:layout_constraintStart_toEndOf="@+id/e_button"
+        app:layout_constraintTop_toBottomOf="@+id/squ_root_button"
+        app:layout_constraintEnd_toEndOf="@+id/scientific_operation_frameLayout"
+        app:layout_constraintBottom_toTopOf="@+id/not_button"/>
+
+    <TextView
+        style="@style/CalculatorScientificOperationButton"
+        android:id="@+id/open_bracket_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="("
+        app:layout_constraintVertical_weight="1"
+        app:layout_constraintStart_toStartOf="@+id/scientific_operation_frameLayout"
+        app:layout_constraintTop_toBottomOf="@+id/pi_button"
+        app:layout_constraintEnd_toStartOf="@id/close_bracket_button"
+        app:layout_constraintBottom_toBottomOf="@+id/scientific_operation_frameLayout"/>
+
+    <TextView
+        style="@style/CalculatorScientificOperationButton"
+        android:id="@+id/close_bracket_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text=")"
+        app:layout_constraintVertical_weight="1"
+        app:layout_constraintStart_toEndOf="@+id/open_bracket_button"
+        app:layout_constraintTop_toBottomOf="@+id/e_button"
+        app:layout_constraintEnd_toStartOf="@+id/not_button"
+        app:layout_constraintBottom_toBottomOf="@+id/scientific_operation_frameLayout"/>
+
+    <TextView
+        style="@style/CalculatorScientificOperationButton"
+        android:id="@+id/not_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="!"
+        app:layout_constraintVertical_weight="1"
+        app:layout_constraintStart_toEndOf="@+id/close_bracket_button"
+        app:layout_constraintTop_toBottomOf="@+id/squ_button"
+        app:layout_constraintEnd_toEndOf="@+id/scientific_operation_frameLayout"
+        app:layout_constraintBottom_toBottomOf="@+id/scientific_operation_frameLayout"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
